@@ -1,5 +1,4 @@
 const points = carnationPoints("#myBox", {
-  debug: true,
   breakpoints: [
     { name: "mobile", max: 767 },
     { name: "tablet", min: 768, max: 1023 },

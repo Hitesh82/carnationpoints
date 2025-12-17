@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="responsive breakpoints, responsive design, viewport Breakpoints, Adaptive Breakpoints, breakpoints, media queries, window resize,custom breakpoint, layout breakpoints, dynamic breakpoints javascript,mobile first,Flex Breakpoints"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carnation Points</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/prism.min.css" />
-  <script src="./js/prism.min.js"></script>
-</head>
+    <meta
+      name="description"
+      content="A lightweight JavaScript breakpoint solution to detect screen sizes, handle window resize events, and build responsive web layouts."
+    />
 
-<body>
-  <header class=" header">
-    <h1>Carnation Points</h1>
-    <h2>“Responsive States — Know exactly where your layout stands.”</h2>
-  </header>
-  <!-- INITIAL PHP RENDER -->
-  <div class="myBox">
-    <p>Handling Window Resize</p>
-    <div id="myBox">
-      Example: none
+    <title>Carnation Breakpoints | Responsive Breakpoints</title>
+    <link rel="stylesheet" href="./css/prism.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/prism.min.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="h1">Carnation Breakpoints</div>
+      <div class="h2">
+        “Responsive States — Know exactly where your layout stands.”
+      </div>
+    </header>
+    <!-- INITIAL PHP RENDER -->
+    <div class="myBox">
+      <p>Resize window</p>
+      <div id="myBox">Example: none</div>
     </div>
-  </div>
-  <!-- codebox 1 -->
-  <div class="codebox">
-    <div class="use-snippet">
-      <h3 class="section-title">Define carnationPoints()</h3>
-      <pre class="language-javascript">
+    <div class="notes">
+      <blockquote>
+        <h1>
+          <strong>Carnation Breakpoints</strong> is a lightweight JavaScript
+          library that helps you manage responsive breakpoints in your web
+          applications. It allows you to define custom breakpoints, listen for
+          changes in viewport size, and execute callback functions when the
+          viewport enters or exits specific breakpoints.
+        </h1>
+      </blockquote>
+    </div>
+    <!-- codebox 1 -->
+    <div class="codebox">
+      <div class="use-snippet">
+        <h3 class="section-title">Define carnationPoints()</h3>
+        <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox");
         </code>
     </pre>
+      </div>
     </div>
-  </div>
-  <!-- codebox 2 -->
-  <div class="codebox">
-    <div class="use-snippet">
-      <h3 class="section-title">Create Breakpoints</h3>
-      <pre class="language-javascript">
+    <!-- codebox 2 -->
+    <div class="codebox">
+      <div class="use-snippet">
+        <h3 class="section-title">Create Breakpoints</h3>
+        <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
           breakpoints: [
@@ -48,13 +68,13 @@
         });
         </code>
     </pre>
+      </div>
     </div>
-  </div>
-  <!-- codebox 3 -->
-  <div class="codebox">
-    <div class="use-snippet">
-      <h3 class="section-title">Get Breakpoint on Init</h3>
-      <pre class="language-javascript">
+    <!-- codebox 3 -->
+    <div class="codebox">
+      <div class="use-snippet">
+        <h3 class="section-title">Get Breakpoint on Init</h3>
+        <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
           breakpoints: [
@@ -68,13 +88,13 @@
         });
         </code>
     </pre>
+      </div>
     </div>
-  </div>
-  <!-- codebox 4 -->
-  <div class="codebox">
-    <div class="use-snippet">
-      <h3 class="section-title">Get Breakpoint on Resize</h3>
-      <pre class="language-javascript">
+    <!-- codebox 4 -->
+    <div class="codebox">
+      <div class="use-snippet">
+        <h3 class="section-title">Get Breakpoint on Resize</h3>
+        <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
           breakpoints: [
@@ -88,13 +108,13 @@
         });
         </code>
     </pre>
+      </div>
     </div>
-  </div>
-  <!-- codebox 5 -->
-  <div class="codebox">
-    <div class="use-snippet">
-      <h3 class="section-title">Add new breakpoints</h3>
-      <pre class="language-javascript">
+    <!-- codebox 5 -->
+    <div class="codebox">
+      <div class="use-snippet">
+        <h3 class="section-title">Add new breakpoints</h3>
+        <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
           breakpoints: [
@@ -110,13 +130,13 @@
         ]);
         </code>
     </pre>
+      </div>
     </div>
-  </div>
-  <!-- codebox 6 -->
-  <div class="codebox">
-    <div class="use-snippet">
-      <h3 class="section-title">Destroy breakpoints</h3>
-      <pre class="language-javascript">
+    <!-- codebox 6 -->
+    <div class="codebox">
+      <div class="use-snippet">
+        <h3 class="section-title">Destroy breakpoints</h3>
+        <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
           breakpoints: [
@@ -129,13 +149,13 @@
         points.destroy();
         </code>
     </pre>
+      </div>
     </div>
-  </div>
-  <!-- codebox 7 -->
-  <div class="codebox">
-    <div class="use-snippet">
-      <h3 class="section-title">Get Breakpoints</h3>
-      <pre class="language-javascript">
+    <!-- codebox 7 -->
+    <div class="codebox">
+      <div class="use-snippet">
+        <h3 class="section-title">Get Breakpoints</h3>
+        <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
           breakpoints: [
@@ -145,19 +165,20 @@
           ],
         });
 
-        points.getBreakpoint()
-        if(points.getBreakpoint() === "mobile"){
+        if (points.getBreakpoint() === "mobile") {
           console.log("You are in mobile breakpoint");
+        } else {
+          console.log("You are not in mobile breakpoint");
         }
         </code>
     </pre>
+      </div>
     </div>
-  </div>
-  <!-- codebox 8 -->
-  <div class="codebox">
-    <div class="use-snippet">
-      <h3 class="section-title">Different way usage</h3>
-      <pre class="language-javascript">
+    <!-- codebox 8 -->
+    <div class="codebox">
+      <div class="use-snippet">
+        <h3 class="section-title">Different way usage</h3>
+        <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints("#myBox", {
           debug: true,
@@ -177,24 +198,18 @@
             document.querySelector(
               "#myBox"
             ).textContent = `Example: ${point.breakpoint}`;
-
-            if (points.getBreakpoint() === "mobile") {
-              console.log("You are in mobile breakpoint");
-            } else {
-              console.log("You are not in mobile breakpoint");
-            }
           },
         });
         </code>
     </pre>
+      </div>
     </div>
-  </div>
-  <footer class="footer">
-    <p>Support</p>
-    Hitesh R Patel :- <a href="mailto:hitesh.gopal@gmail.com">hitesh.gopal@gmail.com</a>
-  </footer>
-  <script src="./carnationpoints/carnationpoints.js"></script>
-  <script src="./js/script.js"></script>
-</body>
-
+    <footer class="footer">
+      <p>Support</p>
+      Hitesh R Patel :-
+      <a href="mailto:hitesh.gopal@gmail.com">hitesh.gopal@gmail.com</a>
+    </footer>
+    <script src="./carnationpoints/carnationpoints.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
 </html>

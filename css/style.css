@@ -12,14 +12,16 @@ body {
   text-align: center;
 }
 
-.header h1 {
-  margin: 0;
+.header .h1 {
+  margin: 0 0 15px;
   font-size: 40px;
+  font-weight: 700;
 }
 
-.header h2 {
+.header .h2 {
   font-weight: normal;
   font-size: 16px;
+  margin: 0 0 15px;
 }
 
 @keyframes gradient {
@@ -92,4 +94,27 @@ pre:focus, code:focus {
 .footer a {
   color: #ffcc00;
   text-decoration: none;
+}
+
+blockquote {
+  border-left: 4px solid #e94c72;
+  margin: 1.5em auto;
+  padding: 30px 10px;
+  color: #000;
+  font-size: 20px;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+blockquote h1 {
+  margin: 0;
+  font-size: 18px;
+}
+code[class*=language-], pre[class*=language-] {
+  tab-size: 1;      /* Chrome, Firefox, Edge */
+  -moz-tab-size: 1; /* Firefox fallback */
+  -o-tab-size: 1;
+  -webkit-tab-size: 1;
 }
