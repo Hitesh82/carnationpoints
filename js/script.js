@@ -12,6 +12,7 @@ const points = carnationPoints("#myBox", {
     }
   },
   onChange(point) {
+    //console.log("Breakpoint changed to:", point.breakpoint);
     document.querySelector(
       "#myBox"
     ).textContent = `Example: ${point.breakpoint}`;

@@ -68,7 +68,6 @@
       this._emit("onChange", {
         width,
         breakpoint: newBreakpoint,
-        //previous: prev,
         element: this.el,
         destroyed: this.options.destroyed,
       });
