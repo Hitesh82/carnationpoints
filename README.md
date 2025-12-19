@@ -91,5 +91,7 @@ const points = carnationPoints(".myBox", {
 
 points.destroy();
 ```
+
+
   </body>
 </html>
