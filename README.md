@@ -16,9 +16,9 @@
 
     <h3>Package Managers</h3>
     
-    ```js
+  ```js
     npm i carnationpoints
-    ```
+  ```
     
     <h3>Define carnationPoints()</h3>
     
