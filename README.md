@@ -14,13 +14,15 @@
     <p>This is pure javascript plugin no require jquery dependency. </p>
     <p>Carnation Breakpoints is a lightweight JavaScript plugin that helps you manage responsive breakpoints in your web applications. It allows you to define custom breakpoints, listen for changes in viewport size, and execute callback functions when the viewport enters or exits specific breakpoints.</p>
 
-    <h3>Package Managers</h3>
-    
+  <h3>Package Managers</h3>
+  <p>https://www.npmjs.com/package/carnationpoints</p>
+  
   ```js
+    # NPM
     npm i carnationpoints
   ```
     
-    <h3>Define carnationPoints()</h3>
+  <h3>Define carnationPoints()</h3>
     
   ```js
   const points = carnationPoints('.myBox');
