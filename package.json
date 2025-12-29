@@ -1,16 +1,21 @@
 {
   "name": "carnationpoints",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Responsive Breakpoints",
   "main": "dist/carnationpoints.js",
   "scripts": {
     "dev": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hitesh82/carnationpoints.git"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [
     "responsive",
     "breakpoints",
@@ -37,7 +42,7 @@
     "Flex",
     "Breakpoints"
   ],
-  "author": "Hitesh Patel <hitesh.gopal@gmail.com",
+  "author": "Hitesh Patel <hitesh.gopal@gmail.com>",
   "contributors": [
     {
       "name": "Hitesh Patel",
