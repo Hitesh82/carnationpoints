@@ -1,0 +1,62 @@
+{
+  "name": "carnationpoints",
+  "version": "1.0.0",
+  "description": "Responsive Breakpoints",
+  "main": "dist/carnationpoints.js",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hitesh82/carnationpoints.git"
+  },
+  "keywords": [
+    "responsive",
+    "breakpoints",
+    "responsive",
+    "design",
+    "viewport",
+    "Breakpoints",
+    "Adaptive",
+    "Breakpoints",
+    "breakpoints",
+    "media",
+    "queries",
+    "window",
+    "resize",
+    "custom",
+    "breakpoint",
+    "layout",
+    "breakpoints",
+    "dynamic",
+    "breakpoints",
+    "javascript",
+    "mobile",
+    "first",
+    "Flex",
+    "Breakpoints"
+  ],
+  "author": "Hitesh Patel <hitesh.gopal@gmail.com",
+  "contributors": [
+    {
+      "name": "Hitesh Patel",
+      "email": "hitesh.gopal@gmail.com",
+      "url": "https://github.com/Hitesh82"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hitesh82/carnationpoints/issues"
+  },
+  "homepage": "https://github.com/Hitesh82/carnationpoints#readme",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.97.1"
+  }
+}
