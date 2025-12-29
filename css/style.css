@@ -118,3 +118,12 @@ code[class*=language-], pre[class*=language-] {
   -o-tab-size: 1;
   -webkit-tab-size: 1;
 }
+.description {
+  padding-bottom: 8px;
+}
+.description p{
+  text-align: center;
+  font-size: 16px;
+  padding: 0;
+  margin: 8px 0px;
+}

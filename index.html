@@ -35,17 +35,21 @@
       <blockquote>
         <h1>
           <strong>Carnation Breakpoints</strong> is a lightweight JavaScript
-          library that helps you manage responsive breakpoints in your web
+          Plugin that helps you manage responsive breakpoints in your web
           applications. It allows you to define custom breakpoints, listen for
           changes in viewport size, and execute callback functions when the
           viewport enters or exits specific breakpoints.
         </h1>
       </blockquote>
     </div>
+
     <!-- codebox 1 -->
     <div class="codebox box">
       <div class="use-snippet">
         <h3 class="section-title">Define carnationPoints()</h3>
+        <div class="description">
+          <p>Returns detected layout points from the selected element.</p>
+        </div>
         <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox");
@@ -57,6 +61,13 @@
     <div class="codebox">
       <div class="use-snippet">
         <h3 class="section-title">Create Breakpoints</h3>
+        <div class="description">
+          <p>Define your own breakpoints based on your layout requirements.</p>
+          <p>
+            Supports custom min/max widths for mobile, tablet, desktop, or any
+            device range.
+          </p>
+        </div>
         <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
@@ -74,6 +85,13 @@
     <div class="codebox">
       <div class="use-snippet">
         <h3 class="section-title">Get Breakpoint on Init</h3>
+        <div class="description">
+          <p>Initializes layout detection using custom breakpoints.</p>
+          <p>
+            Triggers <strong>onInit callback</strong> with the active breakpoint
+            on load.
+          </p>
+        </div>
         <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
@@ -94,6 +112,13 @@
     <div class="codebox">
       <div class="use-snippet">
         <h3 class="section-title">Get Breakpoint on Resize</h3>
+        <div class="description">
+          <p>Detects layout changes using custom breakpoints.</p>
+          <p>
+            Triggers <strong>onChange callback</strong> when the active
+            breakpoint changes on resize.
+          </p>
+        </div>
         <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
@@ -114,6 +139,9 @@
     <div class="codebox">
       <div class="use-snippet">
         <h3 class="section-title">Add new breakpoints</h3>
+        <div class="description">
+          <p>Adds additional custom breakpoints dynamically using addPoint.</p>
+        </div>
         <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
@@ -136,6 +164,12 @@
     <div class="codebox">
       <div class="use-snippet">
         <h3 class="section-title">Destroy breakpoints</h3>
+        <div class="description">
+          <p>
+            Cleans up listeners and removes all breakpoint observers using
+            destroy.
+          </p>
+        </div>
         <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
@@ -155,6 +189,12 @@
     <div class="codebox">
       <div class="use-snippet">
         <h3 class="section-title">Get Breakpoints</h3>
+        <div class="description">
+          <p>
+            Checks the current active breakpoint using
+            <strong>getBreakpoint()</strong>.
+          </p>
+        </div>
         <pre class="language-javascript">
         <code class="language-javascript">
         const points = carnationPoints(".myBox", {
@@ -177,31 +217,48 @@
     <!-- codebox 8 -->
     <div class="codebox">
       <div class="use-snippet">
-        <h3 class="section-title">Different way usage</h3>
+        <h3 class="section-title">Use Event</h3>
+        <div class="description">
+          <p>Listens for breakpoint change events on the target element.</p>
+          <p>Executes logic when the active breakpoint changes.</p>
+        </div>
         <pre class="language-javascript">
         <code class="language-javascript">
-        const points = carnationPoints("#myBox", {
-          debug: true,
-          breakpoints: [
-            { name: "mobile", max: 767 },
-            { name: "tablet", min: 768, max: 1023 },
-            { name: "desktop", min: 1024 },
-          ],
-          onInit(point) {
-            if (point.breakpoint) {
-              document.querySelector(
-                "#myBox"
-              ).textContent = `Example: ${point.breakpoint}`;
-            }
-          },
-          onChange(point) {
-            document.querySelector(
-              "#myBox"
-            ).textContent = `Example: ${point.breakpoint}`;
-          },
+        points.el.addEventListener("breakpoint:change", function (e) {
+          if (e.detail.breakpoint === "mobile") {
+            console.log("Mobile active");
+          }
         });
         </code>
     </pre>
+      </div>
+    </div>
+    <!-- codebox 9 -->
+    <div class="codebox box">
+      <div class="use-snippet">
+        <div class="description">
+          <h3 class="section-title">Github</h3>
+          <p>
+            <a
+              href="https://github.com/Hitesh82/carnationpoints"
+              target="_blank"
+              >https://github.com/Hitesh82/carnationpoints</a
+            >
+          </p>
+          <h3 class="section-title">Npm</h3>
+          <p>
+            <a
+              href="https://www.npmjs.com/package/carnationpoints"
+              target="_blank"
+              >https://www.npmjs.com/package/carnationpoints</a
+            >
+          </p>
+        </div>
+        <pre class="language-javascript">
+        <code class="language-javascript">
+        npm i carnationpoints
+        </code>
+        </pre>
       </div>
     </div>
     <footer class="footer">

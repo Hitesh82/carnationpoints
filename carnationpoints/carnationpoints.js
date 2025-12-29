@@ -2,10 +2,10 @@
   "use strict";
 
   function carnationPoints(target, options = {}) {
-    return new point(target, options);
+    return new Point(target, options);
   }
 
-  function point(target, options) {
+  function Point(target, options) {
     this.el =
       typeof target === "string" ? document.querySelector(target) : target;
 
@@ -14,28 +14,35 @@
       return;
     }
 
+    // ---- defaults (CONFIG ONLY)
     this.defaults = {
       debug: false,
       speed: 300,
       onInit: null,
       onChange: null,
       breakpoints: [],
-      destroyed: false,
     };
 
+    // ---- merge options
     this.options = { ...this.defaults, ...options };
 
+    // ---- runtime state
     this.state = {
       initialized: false,
+      destroyed: false,
+      breakpoint: null,
     };
 
+    // bind once
     this._onResize = this._onResize.bind(this);
 
     this.init();
   }
 
-  point.prototype.init = function () {
-    if (this.state.initialized || this.options.destroyed) return;
+  /* ---------------- INIT ---------------- */
+
+  Point.prototype.init = function () {
+    if (this.state.initialized || this.state.destroyed) return;
 
     this.state.initialized = true;
 
@@ -48,49 +55,66 @@
       width,
       breakpoint: this.state.breakpoint,
       element: this.el,
-      destroyed: this.options.destroyed,
+      instance: this,
     });
 
     this._log("initialized");
   };
 
-  point.prototype._onResize = function () {
-    if (this.options.destroyed === true) return;
+  /* ---------------- RESIZE ---------------- */
+
+  Point.prototype._onResize = function () {
+    if (this.state.destroyed) return;
 
     const width = this._getWidth();
     const newBreakpoint = this._getActiveBreakpoint(width);
 
-    // Only react if breakpoint changed
     if (newBreakpoint !== this.state.breakpoint) {
       const prev = this.state.breakpoint;
       this.state.breakpoint = newBreakpoint;
 
+      const event = new CustomEvent("breakpoint:change", {
+        detail: {
+          breakpoint: newBreakpoint,
+          previous: prev,
+          width,
+          element: this.el,
+          instance: this,
+        },
+        bubbles: true,
+      });
+
+      this.el.dispatchEvent(event);
+
       this._emit("onChange", {
         width,
         breakpoint: newBreakpoint,
+        previous: prev,
         element: this.el,
-        destroyed: this.options.destroyed,
+        instance: this,
       });
     }
   };
 
-  point.prototype._emit = function (callbackName, data) {
+  /* ---------------- HELPERS ---------------- */
+
+  Point.prototype._emit = function (callbackName, data) {
     if (typeof this.options[callbackName] === "function") {
       this.options[callbackName](data);
     }
   };
 
-  point.prototype._log = function (...args) {
+  Point.prototype._log = function (...args) {
     if (this.options.debug) {
       console.log("Breakpoints:", ...args);
     }
   };
 
-  point.prototype._getWidth = function () {
+  Point.prototype._getWidth = function () {
     return window.innerWidth;
   };
 
-  point.prototype._getActiveBreakpoint = function (width) {
+  Point.prototype._getActiveBreakpoint = function (width) {
     let active = null;
 
     this.options.breakpoints.forEach((bp) => {
@@ -105,13 +129,14 @@
     return active;
   };
 
-  point.prototype.addPoint = function (bps = []) {
-    //if (!bp || typeof bp !== "object") return;
+  /* ---------------- PUBLIC API ---------------- */
+
+  Point.prototype.addPoint = function (bps = []) {
+    if (this.state.destroyed) return;
     if (!Array.isArray(bps)) return;
 
     this.options.breakpoints.push(...bps);
 
-    // Recalculate breakpoint
     const width = this._getWidth();
     const newBreakpoint = this._getActiveBreakpoint(width);
 
@@ -124,33 +149,37 @@
         breakpoint: newBreakpoint,
         previous: prev,
         element: this.el,
-        destroyed: this.options.destroyed,
+        instance: this,
       });
     }
 
-    this._log("point added", bps);
+    this._log("points added", bps);
   };
 
-  point.prototype.destroy = function () {
+  Point.prototype.getBreakpoint = function () {
+    return this.state.breakpoint;
+  };
+
+  /* ---------------- DESTROY ---------------- */
+
+  Point.prototype.destroy = function () {
+    if (this.state.destroyed) return;
+
     window.removeEventListener("resize", this._onResize);
 
-    this.options.breakpoints = [];
-
-    this.options.destroyed = true;
-
-    this.state.breakpoint = null;
+    this.state.destroyed = true;
     this.state.initialized = false;
+    this.state.breakpoint = null;
 
+    this.options.breakpoints.length = 0;
     this.options.onChange = null;
     this.options.onInit = null;
 
-    this._log("destroyed and breakpoints cleared");
-    console.warn("Breakpoints: destroyed & cleared");
+    this._log("destroyed");
+    console.warn("Breakpoints: destroyed");
   };
 
-  point.prototype.getBreakpoint = function () {
-    return this.state.breakpoint;
-  };
+  /* ---------------- EXPORT ---------------- */
 
   window.carnationPoints = carnationPoints;
 })(window, document);
