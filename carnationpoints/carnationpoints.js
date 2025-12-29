@@ -10,7 +10,7 @@
       typeof target === "string" ? document.querySelector(target) : target;
 
     if (!this.el) {
-      console.warn("Breakpoints: element not found");
+      console.warn("Breakpoints: element not found ");
       return;
     }
 

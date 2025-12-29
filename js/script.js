@@ -17,3 +17,4 @@ const points = carnationPoints("#myBox", {
     ).textContent = `Example: ${point.breakpoint}`;
   },
 });
+//console.log()

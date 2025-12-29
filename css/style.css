@@ -120,6 +120,7 @@ code[class*=language-], pre[class*=language-] {
 }
 .description {
   padding-bottom: 8px;
+  margin: 0
 }
 .description p{
   text-align: center;
