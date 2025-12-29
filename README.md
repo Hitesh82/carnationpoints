@@ -117,7 +117,7 @@ points.destroy();
 ```js
  points.el.addEventListener("breakpoint:change", function (e) {
     if (e.detail.breakpoint === "mobile") {
-      console.log("📱 Mobile active");
+      console.log("Mobile active");
     }
   });
 ```
