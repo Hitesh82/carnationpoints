@@ -1,6 +1,6 @@
 {
   "name": "carnationpoints",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Responsive Breakpoints",
   "main": "dist/carnationpoints.js",
   "scripts": {
@@ -14,7 +14,11 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "index.html",
+    "css",
+    "js",
+    "src"
   ],
   "keywords": [
     "responsive",
