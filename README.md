@@ -25,9 +25,9 @@
   <h3>Define carnationPoints()</h3>
   <p>Returns detected layout points from the selected element.</p>
 
-  ```js
-  const points = carnationPoints('.myBox');
-  ```
+```js
+const points = carnationPoints(".myBox");
+```
 
   <h3>Create Breakpoints</h3>
   <p>Define your own breakpoints based on your layout requirements.</p>
@@ -94,7 +94,6 @@ points.addPoint([
 ]);
 ```
 
-
 <h3>Destroy breakpoints</h3>
 <p>Cleans up listeners and removes all breakpoint observers using destroy.</p>
 
@@ -115,14 +114,12 @@ points.destroy();
 <p>Executes logic when the active breakpoint changes.</p>
 
 ```js
- points.el.addEventListener("breakpoint:change", function (e) {
-    if (e.detail.breakpoint === "mobile") {
-      console.log("Mobile active");
-    }
-  });
+points.el.addEventListener("breakpoint:change", function (e) {
+  if (e.detail.breakpoint === "mobile") {
+    console.log("Mobile active");
+  }
+});
 ```
-
-
 
   </body>
 </html>
