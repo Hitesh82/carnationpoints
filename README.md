@@ -121,5 +121,30 @@ points.el.addEventListener("breakpoint:change", function (e) {
 });
 ```
 
+<h3>The HTML structure should be
+</h3>
+
+```html
+<html>
+  <head>
+    <script src="./dist/carnationpoints.min.js"></script>
+  </head>
+  <body>
+    <div class="your-element-name">
+      Box
+    </div>
+    <script>
+      const points = carnationPoints(".your-element-name", {
+        breakpoints: [
+          { name: "mobile", max: 767 },
+          { name: "tablet", min: 768, max: 1023 },
+          { name: "desktop", min: 1024 },
+        ],
+      });
+    </script>
+  </body>
+</html>
+```
+
   </body>
 </html>
