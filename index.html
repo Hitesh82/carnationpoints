@@ -42,36 +42,6 @@
         </h1>
       </blockquote>
     </div>
-    <!-- codebox 0 -->
-    <div class="codebox box">
-      <div class="use-snippet">
-        <h3 class="section-title">The HTML structure should be</h3>
-        <pre class="language-javascript">
-        <code class="language-javascript">
-          &lt;html&gt;
-            &lt;head&gt;
-              &lt;script src="./dist/carnationpoints.min.js"&gt;&lt;/script&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-              &lt;div class="your-element-name"&gt;
-                Box
-              &lt;/div&gt;
-
-              &lt;script&gt;
-                const points = carnationPoints(".your-element-name", {
-                  breakpoints: [
-                    { name: "mobile", max: 767 },
-                    { name: "tablet", min: 768, max: 1023 },
-                    { name: "desktop", min: 1024 },
-                  ],
-                });
-              &lt;/script&gt;
-            &lt;/body&gt;
-          &lt;/html&gt;
-        </code>
-      </pre>
-      </div>
-    </div>
     <!-- codebox 1 -->
     <div class="codebox box">
       <div class="use-snippet">
@@ -263,6 +233,35 @@
       </div>
     </div>
     <!-- codebox 9 -->
+    <div class="codebox box">
+      <div class="use-snippet">
+        <h3 class="section-title">The HTML structure should be</h3>
+        <pre class="language-javascript">
+        <code class="language-javascript">
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;script src="./dist/carnationpoints.min.js"&gt;&lt;/script&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div class="your-element-name"&gt;
+                Box
+              &lt;/div&gt;
+              &lt;script&gt;
+                const points = carnationPoints(".your-element-name", {
+                  breakpoints: [
+                    { name: "mobile", max: 767 },
+                    { name: "tablet", min: 768, max: 1023 },
+                    { name: "desktop", min: 1024 },
+                  ],
+                });
+              &lt;/script&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+        </code>
+      </pre>
+      </div>
+    </div>
+    <!-- codebox 10 -->
     <div class="codebox box">
       <div class="use-snippet">
         <div class="description">
